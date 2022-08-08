@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Linear Regression</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="CRIM" size= "50" placeholder="Crime_ratio(0.00 - 88.97)" required="required" /><br>
+    	<input type="text" name="ZN" size= "50" placeholder="Proportion_Zoned_land(0.00 - 100.00)" required="required" /><br>
+        <input type="text" name="INDUS" size= "50" placeholder="NR_business(0.46 - 27.74)" required="required" /><br>
+        <input type="text" name="NOX" size= "50" placeholder="NO2_Conc.(0.38 - 0.87)" required="required" /><br>
+        <input type="text" name="RM" size= "50" placeholder="Avg._rooms_per_dwelling(3.56 - 8.78)" required="required" /><br>
+        <input type="text" name="AGE" size= "50" placeholder="Age_of_house(2.90 - 100.00)" required="required" /><br>
+        <input type="text" name="RAD" size= "50" placeholder="Highway_Accessibility(1.00 - 24.00)" required="required" /><br>
+        <input type="text" name="TAX" size= "50" placeholder="Full_property_Tax(187.00 - 711.00)" required="required" /><br>
+        <input type="text" name="PTRATIO" size= "50" placeholder="Pupil_teacher_ratio(12.60 - 22.00)" required="required" /><br>
+        <input type="text" name="LSTAT" size= "50" placeholder="%_lower_population(1.37 - 37.97)" required="required" /><br>
+        
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
